@@ -4,6 +4,7 @@ import Figure from '../Figure'
 import './app.css'
 import infos from '../../assets/data'
 import Button from '../Button'
+import Content from '../Content'
 
 const App = () => {
   return (
@@ -17,6 +18,8 @@ const App = () => {
           <Button key={info.id} text={info.title} />
         ))}
       </section>
+
+      <Content content={infos[0].content} />
     </div>
   )
 }

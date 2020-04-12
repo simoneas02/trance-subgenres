@@ -38,11 +38,19 @@ describe('When App start', () => {
     expect(subgenres).toBeInTheDocument()
   })
 
-  it('should contain three Buttons component', () => {
+  it('should contain a list of Buttons component', () => {
     const { getAllByTestId } = render(<App />)
 
     const button = getAllByTestId('button')
 
     expect(button).toHaveLength(3)
+  })
+
+  it('should contain a Content component', () => {
+    const { getByTestId } = render(<App />)
+
+    const content = getByTestId('content')
+
+    expect(content).toBeInTheDocument()
   })
 })
