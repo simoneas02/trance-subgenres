@@ -1,0 +1,6 @@
+.app {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
