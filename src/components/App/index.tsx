@@ -19,7 +19,28 @@ const App = () => {
         ))}
       </section>
 
-      <Content content={infos[0].content} />
+      <div className="main-content">
+        <Content
+          title={infos[0].title}
+          subtitle={infos[0].subTitle}
+          content={infos[0].content}
+        />
+
+        <section data-testid="bpm" className="bpm">
+          <h3 className="bpm__title">BPM range:</h3>
+          <span className="bpm__value">{infos[0].bpm.min}</span>
+          <span className="bpm__value">{infos[0].bpm.max}</span>
+        </section>
+      </div>
+
+      <section className="artist">
+        <h2 className="artist__title">Notable artists:</h2>
+        {infos[0].artists.map((artist) => (
+          <span key={artist} className="artist__name">
+            {artist}
+          </span>
+        ))}
+      </section>
     </div>
   )
 }

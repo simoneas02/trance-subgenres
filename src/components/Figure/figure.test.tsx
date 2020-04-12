@@ -17,7 +17,7 @@ describe('Figure component', () => {
   it('should show up a image with alt prop', () => {
     const { getByAltText } = render(<Figure src="some-src" alt="some-alt" />)
 
-    const alt = getByAltText(/some-alt/)
+    const alt = getByAltText('some-alt')
 
     expect(alt).toBeInTheDocument()
   })

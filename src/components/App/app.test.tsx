@@ -17,7 +17,7 @@ describe('When App start', () => {
   it('should show up a title', () => {
     const { getByText } = render(<App />)
 
-    const title = getByText(/Trance Subgenres/)
+    const title = getByText('Trance Subgenres')
 
     expect(title).toBeInTheDocument()
   })
@@ -52,5 +52,21 @@ describe('When App start', () => {
     const content = getByTestId('content')
 
     expect(content).toBeInTheDocument()
+  })
+
+  it('should show up a BPM section', () => {
+    const { getByTestId } = render(<App />)
+
+    const bpm = getByTestId('bpm')
+
+    expect(bpm).toBeInTheDocument()
+  })
+
+  it('should show up BPM section with a title', () => {
+    const { getByText } = render(<App />)
+
+    const title = getByText('BPM range:')
+
+    expect(title).toBeInTheDocument()
   })
 })
