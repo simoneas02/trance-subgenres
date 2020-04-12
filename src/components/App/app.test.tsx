@@ -29,4 +29,20 @@ describe('When App start', () => {
 
     expect(figureId).toBeInTheDocument()
   })
+
+  it('should show up subgenres section', () => {
+    const { getByTestId } = render(<App />)
+
+    const subgenres = getByTestId('subgenres')
+
+    expect(subgenres).toBeInTheDocument()
+  })
+
+  it('should contain three Buttons component', () => {
+    const { getAllByTestId } = render(<App />)
+
+    const button = getAllByTestId('button')
+
+    expect(button).toHaveLength(3)
+  })
 })

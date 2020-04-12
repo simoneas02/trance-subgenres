@@ -2,7 +2,7 @@ import fullon from './imgs/goa-fullon.jpeg'
 import prog from './imgs/progresive-psy.jpeg'
 import dark from './imgs/dark-psy.jpeg'
 
-const data = [
+const infos = [
   {
     id: 'figure-01',
     title: 'Full-on',
@@ -73,4 +73,4 @@ const data = [
   },
 ]
 
-export default data
+export default infos
