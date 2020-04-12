@@ -1,14 +1,16 @@
 import React from 'react'
-import Card from '../Card'
+import Figure from '../Figure'
 
 import './app.css'
-import dark from '../../imgs/dark-psy.jpeg'
+import data from '../../assets/data'
 
-const App = () => (
-  <div className="app">
-    <h1 className="app-title">Trance Subgenres</h1>
-    <Card src={dark} alt="Psy dark" />
-  </div>
-)
+const App = () => {
+  return (
+    <div className="app" data-testid="app">
+      <h1 className="app-title">Trance Subgenres</h1>
+      <Figure src={data[0].src} alt={data[0].alt} />
+    </div>
+  )
+}
 
 export default App
