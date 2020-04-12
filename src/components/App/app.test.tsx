@@ -15,6 +15,6 @@ describe('When App start', () => {
   it('should contain a Card component', () => {
     const { getByTestId } = render(<App />)
 
-    expect(getByTestId('cardComponent')).toBeInTheDocument()
+    expect(getByTestId('card-component')).toBeInTheDocument()
   })
 })
