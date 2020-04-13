@@ -1,13 +1,18 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 
 import Content from '.'
-import App from '../App'
 
 describe('When Content component show up', () => {
+  afterEach(cleanup)
+
   it('should render a content', () => {
     const { getByText } = render(
-      <Content content="some content" title="some title" />
+      <Content
+        title="some title"
+        subtitle="some subtitle"
+        content="some content"
+      />
     )
 
     const content = getByText('some content')

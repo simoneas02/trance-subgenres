@@ -4,7 +4,7 @@ import dark from './imgs/dark-psy.jpeg'
 
 const infos = [
   {
-    id: 'figure-01',
+    id: 'info-01',
     title: 'Full-on',
     src: fullon,
     alt: 'Psychedelic picture',
@@ -27,7 +27,7 @@ const infos = [
     ],
   },
   {
-    id: 'figure-02',
+    id: 'info-02',
     title: 'Progressive Psy',
     src: prog,
     alt: 'Psychedelic picture',
@@ -50,7 +50,7 @@ const infos = [
     ],
   },
   {
-    id: 'figure-03',
+    id: 'info-03',
     title: 'Dark Psy',
     src: dark,
     alt: 'Psychedelic picture',

@@ -2,10 +2,15 @@ import React from 'react'
 
 interface ButtonProps {
   text: string
+  handleClickIndex: () => void
 }
 
-const Button = ({ text }: ButtonProps) => (
-  <button data-testid="button" className="button">
+const Button = ({ text, handleClickIndex }: ButtonProps) => (
+  <button
+    data-testid={`button-${text}`}
+    className="button"
+    onClick={() => handleClickIndex()}
+  >
     {text}
   </button>
 )
