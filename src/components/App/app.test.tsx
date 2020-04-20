@@ -76,6 +76,16 @@ describe('Given App starts', () => {
     expect(title).toBeInTheDocument()
   })
 
+  it('then should contain a Artists component with a title', () => {
+    const { getByTestId } = render(<App />)
+
+    const artistsId = getByTestId('artists')
+    const artistsTitleId = getByTestId('artists-title')
+
+    expect(artistsId).toBeInTheDocument()
+    expect(artistsTitleId).toBeInTheDocument()
+  })
+
   describe('When a button is bumped', () => {
     describe('The Figure', () => {
       it('should change the image', () => {
@@ -168,7 +178,7 @@ describe('Given App starts', () => {
       it('should change the artists value', () => {
         const { getByTestId } = render(<App />)
 
-        const artists = getByTestId('artist')
+        const artists = getByTestId('artists')
 
         expect(artists.lastChild).toHaveTextContent('Wizzy Noise')
 

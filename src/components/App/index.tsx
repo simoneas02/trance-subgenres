@@ -5,10 +5,11 @@ import {
   initialState,
 } from '../../store/subgenres/reducers'
 
+import Header from '../Header'
+import Figure from '../Figure'
 import Button from '../Button'
 import Content from '../Content'
-import Figure from '../Figure'
-import Header from '../Header'
+import Artists from '../Artists'
 
 import infos from '../../assets/data'
 import './app.css'
@@ -55,14 +56,7 @@ const App = () => {
         </section>
       </div>
 
-      <section data-testid="artist" className="artist">
-        <h2 className="artist__title">Notable artists:</h2>
-        {infos[currentIndex].artists.map((artist) => (
-          <span key={artist} className="artist__name">
-            {artist}
-          </span>
-        ))}
-      </section>
+      <Artists infos={infos[currentIndex].artists} />
     </div>
   )
 }
