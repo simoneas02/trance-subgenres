@@ -81,13 +81,13 @@ describe('When App start', () => {
 
         const image = getByTestId('figure-img')
 
-        expect(image.getAttribute('src')).toBe('goa-fullon.jpeg')
+        expect(image.getAttribute('src')).toBe('goa-fullon.jpg')
 
         const buttonProg = getByTestId('button-Progressive Psy')
 
         fireEvent.click(buttonProg)
 
-        expect(image.getAttribute('src')).toBe('progresive-psy.jpeg')
+        expect(image.getAttribute('src')).toBe('progresive-psy.jpg')
       })
     })
 

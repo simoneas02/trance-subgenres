@@ -1,6 +1,6 @@
-import fullon from './imgs/goa-fullon.jpeg'
-import prog from './imgs/progresive-psy.jpeg'
-import dark from './imgs/dark-psy.jpeg'
+import fullon from './imgs/goa-fullon.jpg'
+import prog from './imgs/progresive-psy.jpg'
+import dark from './imgs/dark-psy.jpg'
 
 const infos = [
   {
