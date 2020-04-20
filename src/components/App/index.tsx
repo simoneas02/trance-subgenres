@@ -14,6 +14,7 @@ import Artists from '../Artists'
 import infos from '../../assets/data'
 import './app.css'
 import { CHANGE_SUBGENRES } from '../../store/subgenres/types'
+import BPM from '../BPM'
 
 const App = () => {
   const [state, dispatch] = useReducer(changeSubgenresReducer, initialState)
@@ -26,37 +27,34 @@ const App = () => {
   return (
     <div className="app" data-testid="app">
       <Header />
-      <Figure src={infos[currentIndex].src} alt={infos[currentIndex].alt} />
+      <section className="figure">
+        <Figure src={infos[currentIndex].src} alt={infos[currentIndex].alt} />
 
-      <section data-testid="subgenres" className="subgenres">
-        {infos.map((info, index) => (
-          <Button
-            key={index}
-            text={info.title}
-            handleClickIndex={() => handleClickIndex(index)}
-          />
-        ))}
+        <section data-testid="subgenres" className="subgenres">
+          {infos.map((info, index) => (
+            <Button
+              key={index}
+              text={info.title}
+              handleClickIndex={() => handleClickIndex(index)}
+            />
+          ))}
+        </section>
       </section>
 
-      <div className="main-content">
+      <section className="main-content">
         <Content
           title={infos[currentIndex].title}
           subtitle={infos[currentIndex].subTitle}
           content={infos[currentIndex].content}
         />
 
-        <section data-testid="bpm" className="bpm">
-          <h3 className="bpm__title">BPM range:</h3>
-          <span data-testid="bpm-min" className="bpm__value">
-            {infos[currentIndex].bpm.min}
-          </span>
-          <span data-testid="bpm-max" className="bpm__value">
-            {infos[currentIndex].bpm.max}
-          </span>
-        </section>
-      </div>
+        <BPM
+          min={infos[currentIndex].bpm.min}
+          max={infos[currentIndex].bpm.max}
+        />
 
-      <Artists infos={infos[currentIndex].artists} />
+        <Artists infos={infos[currentIndex].artists} />
+      </section>
     </div>
   )
 }

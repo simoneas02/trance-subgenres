@@ -60,30 +60,24 @@ describe('Given App starts', () => {
     expect(content).toBeInTheDocument()
   })
 
-  it('should show up a BPM section', () => {
+  it('then should contain a BPM component with a title', () => {
     const { getByTestId } = render(<App />)
 
     const bpm = getByTestId('bpm')
+    const title = getByTestId('bpm-title')
 
     expect(bpm).toBeInTheDocument()
-  })
-
-  it('should show up BPM section with a title', () => {
-    const { getByText } = render(<App />)
-
-    const title = getByText('BPM range:')
-
     expect(title).toBeInTheDocument()
   })
 
   it('then should contain a Artists component with a title', () => {
     const { getByTestId } = render(<App />)
 
-    const artistsId = getByTestId('artists')
-    const artistsTitleId = getByTestId('artists-title')
+    const artists = getByTestId('artists')
+    const title = getByTestId('artists-title')
 
-    expect(artistsId).toBeInTheDocument()
-    expect(artistsTitleId).toBeInTheDocument()
+    expect(artists).toBeInTheDocument()
+    expect(title).toBeInTheDocument()
   })
 
   describe('When a button is bumped', () => {

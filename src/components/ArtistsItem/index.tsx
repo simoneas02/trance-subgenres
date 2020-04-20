@@ -1,9 +1,9 @@
 import React from 'react'
 
-interface ArtistsItemProp {
+interface ArtistsItemProps {
   artist: string
 }
-const ArtistsItem = ({ artist }: ArtistsItemProp) => (
+const ArtistsItem = ({ artist }: ArtistsItemProps) => (
   <li className="artists-list__item" data-testid="artists-item">
     {artist}
   </li>
