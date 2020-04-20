@@ -3,10 +3,10 @@ import { render, cleanup, fireEvent } from '@testing-library/react'
 
 import App from '.'
 
-describe('When App start', () => {
+describe('Given App starts', () => {
   afterEach(cleanup)
 
-  it('should render a App component', () => {
+  it('then App should be rendered', () => {
     const { getByTestId } = render(<App />)
 
     const appId = getByTestId('app')
@@ -14,12 +14,14 @@ describe('When App start', () => {
     expect(appId).toBeInTheDocument()
   })
 
-  it('should show up a title', () => {
-    const { getByText } = render(<App />)
+  it('then should contain a Header with a title', () => {
+    const { getByTestId } = render(<App />)
 
-    const title = getByText('Trance Subgenres')
+    const headerId = getByTestId('header')
+    const headerTitleId = getByTestId('header-title')
 
-    expect(title).toBeInTheDocument()
+    expect(headerId).toBeInTheDocument()
+    expect(headerTitleId).toBeInTheDocument()
   })
 
   it('should contain a Figure component', () => {

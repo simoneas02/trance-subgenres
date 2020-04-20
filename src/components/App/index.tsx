@@ -8,6 +8,7 @@ import {
 import Button from '../Button'
 import Content from '../Content'
 import Figure from '../Figure'
+import Header from '../Header'
 
 import infos from '../../assets/data'
 import './app.css'
@@ -23,8 +24,7 @@ const App = () => {
 
   return (
     <div className="app" data-testid="app">
-      <h1 className="app-title">Trance Subgenres</h1>
-
+      <Header />
       <Figure src={infos[currentIndex].src} alt={infos[currentIndex].alt} />
 
       <section data-testid="subgenres" className="subgenres">
