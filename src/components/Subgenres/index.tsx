@@ -13,18 +13,12 @@ interface SubgenresProps {
     content?: string
     artists?: string[]
   }[]
-  handleClickIndex: (index: number) => void
 }
 
-const Subgenres = ({ subgenres, handleClickIndex }: SubgenresProps) => (
+const Subgenres = ({ subgenres }: SubgenresProps) => (
   <ul data-testid="subgenres" className="subgenres">
     {subgenres.map((subgenre, index) => (
-      <SubgenresItem
-        key={index}
-        text={subgenre.title}
-        handleClickIndex={(index) => handleClickIndex(index)}
-        index={index}
-      />
+      <SubgenresItem key={index} text={subgenre.title} index={index} />
     ))}
   </ul>
 )

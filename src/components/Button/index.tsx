@@ -9,7 +9,7 @@ const Button = ({ text, handleClickIndex }: ButtonProps) => (
   <button
     data-testid={`button-${text}`}
     className="button"
-    onClick={() => handleClickIndex()}
+    onClick={handleClickIndex}
   >
     {text}
   </button>

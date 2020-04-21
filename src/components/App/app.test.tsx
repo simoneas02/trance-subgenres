@@ -1,6 +1,8 @@
 import React from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 
+import { SubgenresProvider } from '../../store/context'
+
 import App from '.'
 
 describe('Given App starts', () => {
@@ -77,9 +79,14 @@ describe('Given App starts', () => {
   })
 
   describe('When a button is bumped', () => {
+    afterEach(cleanup)
     describe('The Figure', () => {
       it('should change the image', () => {
-        const { getByTestId } = render(<App />)
+        const { getByTestId } = render(
+          <SubgenresProvider>
+            <App />
+          </SubgenresProvider>
+        )
 
         const image = getByTestId('figure-img')
 
@@ -95,7 +102,11 @@ describe('Given App starts', () => {
 
     describe('The Content', () => {
       it('should change the title', () => {
-        const { getByTestId } = render(<App />)
+        const { getByTestId } = render(
+          <SubgenresProvider>
+            <App />
+          </SubgenresProvider>
+        )
 
         const title = getByTestId('content-title')
 
@@ -109,7 +120,11 @@ describe('Given App starts', () => {
       })
 
       it('should change the subtitle', () => {
-        const { getByTestId } = render(<App />)
+        const { getByTestId } = render(
+          <SubgenresProvider>
+            <App />
+          </SubgenresProvider>
+        )
 
         const subtitle = getByTestId('content-subtitle')
 
@@ -127,7 +142,11 @@ describe('Given App starts', () => {
       })
 
       it('should change the text', () => {
-        const { getByTestId } = render(<App />)
+        const { getByTestId } = render(
+          <SubgenresProvider>
+            <App />
+          </SubgenresProvider>
+        )
 
         const text = getByTestId('content-text')
 
@@ -147,7 +166,11 @@ describe('Given App starts', () => {
 
     describe('The BPM Range', () => {
       it('should change the min and max value', () => {
-        const { getByTestId } = render(<App />)
+        const { getByTestId } = render(
+          <SubgenresProvider>
+            <App />
+          </SubgenresProvider>
+        )
 
         const bpmMin = getByTestId('bpm-min')
         const bpmMax = getByTestId('bpm-max')
@@ -166,7 +189,11 @@ describe('Given App starts', () => {
 
     describe('The Notable artists:', () => {
       it('should change the artists value', () => {
-        const { getByTestId } = render(<App />)
+        const { getByTestId } = render(
+          <SubgenresProvider>
+            <App />
+          </SubgenresProvider>
+        )
 
         const artists = getByTestId('artists')
 

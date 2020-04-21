@@ -1,9 +1,6 @@
-import React, { useReducer } from 'react'
+import React, { useContext } from 'react'
 
-import {
-  changeSubgenresReducer,
-  initialState,
-} from '../../store/subgenres/reducers'
+import { SubgenresContext } from '../../store/context'
 
 import Header from '../Header'
 import Figure from '../Figure'
@@ -14,15 +11,11 @@ import Artists from '../Artists'
 
 import infos from '../../assets/data'
 import './app.css'
-import { CHANGE_SUBGENRES } from '../../store/subgenres/types'
 
 const App = () => {
-  const [state, dispatch] = useReducer(changeSubgenresReducer, initialState)
+  const { state } = useContext(SubgenresContext)
 
   const { currentIndex } = state
-
-  const handleClickIndex = (index: number) =>
-    dispatch({ type: CHANGE_SUBGENRES, payload: { currentIndex: index } })
 
   return (
     <div className="app" data-testid="app">
@@ -30,10 +23,7 @@ const App = () => {
       <section className="figure">
         <Figure src={infos[currentIndex].src} alt={infos[currentIndex].alt} />
 
-        <Subgenres
-          subgenres={infos}
-          handleClickIndex={(index) => handleClickIndex(index)}
-        />
+        <Subgenres subgenres={infos} />
       </section>
 
       <section className="main-content">
