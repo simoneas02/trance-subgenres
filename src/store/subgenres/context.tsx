@@ -1,7 +1,7 @@
 import React, { createContext, Dispatch, useReducer } from 'react'
 
-import { changeSubgenresReducer, initialState } from './subgenres/reducers'
-import { Subgenres, SubgenresActionTypes } from './subgenres/types'
+import { changeSubgenresReducer, initialState } from './reducers'
+import { Subgenres, SubgenresActionTypes } from './types'
 
 const SubgenresContext = createContext<{
   state: Subgenres

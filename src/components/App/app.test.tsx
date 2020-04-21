@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 
-import { SubgenresProvider } from '../../store/context'
+import { SubgenresProvider } from '../../store/subgenres/context'
 
 import App from '.'
 

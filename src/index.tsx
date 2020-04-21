@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { SubgenresProvider } from './store/context'
+import { SubgenresProvider } from './store/subgenres/context'
 
 import App from './components/App'
 

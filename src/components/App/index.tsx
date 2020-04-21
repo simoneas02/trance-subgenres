@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import { SubgenresContext } from '../../store/context'
+import { SubgenresContext } from '../../store/subgenres/context'
 
 import Header from '../Header'
 import Figure from '../Figure'
