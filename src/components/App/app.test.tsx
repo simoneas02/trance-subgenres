@@ -14,7 +14,7 @@ describe('Given App starts', () => {
     expect(appId).toBeInTheDocument()
   })
 
-  it('then should contain a Header with a title', () => {
+  it('should contain a Header with a title', () => {
     const { getByTestId } = render(<App />)
 
     const headerId = getByTestId('header')
@@ -40,16 +40,12 @@ describe('Given App starts', () => {
     expect(subgenres).toBeInTheDocument()
   })
 
-  it('should contain a list of Buttons component', () => {
+  it('should contain a Subgenres component', () => {
     const { getByTestId } = render(<App />)
 
-    const buttonFullOn = getByTestId('button-Full-on')
-    const buttonProg = getByTestId('button-Progressive Psy')
-    const buttonDark = getByTestId('button-Dark Psy')
+    const subgenres = getByTestId('subgenres')
 
-    expect(buttonFullOn).toBeInTheDocument()
-    expect(buttonProg).toBeInTheDocument()
-    expect(buttonDark).toBeInTheDocument()
+    expect(subgenres).toBeInTheDocument()
   })
 
   it('should contain a Content component', () => {
@@ -60,7 +56,7 @@ describe('Given App starts', () => {
     expect(content).toBeInTheDocument()
   })
 
-  it('then should contain a BPM component with a title', () => {
+  it('should contain a BPM component with a title', () => {
     const { getByTestId } = render(<App />)
 
     const bpm = getByTestId('bpm')
@@ -70,7 +66,7 @@ describe('Given App starts', () => {
     expect(title).toBeInTheDocument()
   })
 
-  it('then should contain a Artists component with a title', () => {
+  it('should contain a Artists component with a title', () => {
     const { getByTestId } = render(<App />)
 
     const artists = getByTestId('artists')

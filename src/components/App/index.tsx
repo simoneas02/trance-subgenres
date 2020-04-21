@@ -7,14 +7,14 @@ import {
 
 import Header from '../Header'
 import Figure from '../Figure'
-import Button from '../Button'
+import Subgenres from '../Subgenres'
 import Content from '../Content'
+import BPM from '../BPM'
 import Artists from '../Artists'
 
 import infos from '../../assets/data'
 import './app.css'
 import { CHANGE_SUBGENRES } from '../../store/subgenres/types'
-import BPM from '../BPM'
 
 const App = () => {
   const [state, dispatch] = useReducer(changeSubgenresReducer, initialState)
@@ -30,15 +30,10 @@ const App = () => {
       <section className="figure">
         <Figure src={infos[currentIndex].src} alt={infos[currentIndex].alt} />
 
-        <section data-testid="subgenres" className="subgenres">
-          {infos.map((info, index) => (
-            <Button
-              key={index}
-              text={info.title}
-              handleClickIndex={() => handleClickIndex(index)}
-            />
-          ))}
-        </section>
+        <Subgenres
+          subgenres={infos}
+          handleClickIndex={(index) => handleClickIndex(index)}
+        />
       </section>
 
       <section className="main-content">
